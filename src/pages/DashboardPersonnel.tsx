@@ -37,7 +37,7 @@ export default function DashboardPersonnel({ user }: DashboardPersonnelProps) {
       .from('prestations')
       .select('*')
       .eq('user_id', user.id)
-      .then(({ data }) => setPrestations((data as Prestation[]) || []));
+      .then(({ data }: { data: any }) => setPrestations((data as Prestation[]) || []));
   }, [user.id]);
 
   const handleSubmit = async (e: React.FormEvent) => {

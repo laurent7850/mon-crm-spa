@@ -20,7 +20,7 @@ export default function DashboardAdmin() {
       .from('prestations')
       .select('*, users(nom,prenom)')
       .eq('statut', 'encodée')
-      .then(({ data }) => setPrestations((data as Prestation[]) || []));
+      .then(({ data }: { data: any }) => setPrestations((data as Prestation[]) || []));
   }, []);
 
   const valider = async (id: string) => {
