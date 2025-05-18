@@ -17,7 +17,7 @@ export default function Login({ onLogin }: LoginProps) {
       password,
     });
     if (error) setError(error.message);
-    else onLogin(user);
+    else if (data && data.user) onLogin(data.user);
   };
 
   return (
